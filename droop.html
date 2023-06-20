@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Select All This </h1>
+
+    <select id="ArrayDropdown"></select>
+       <form action="myform">
+       <select id="id_dropdown">
+        <option>One</option>
+        <option>Two</option>
+        <option>Three</option>
+       </select>
+       <input type="button" onclick="fun_remove()" value="Click to Remove">
+    </form> 
+    <script>
+        function fun_remove() {
+            var element = document.getElementById("id_dropdown");
+            element.remove(element.selectedindex);
+            
+        }
+        var arr = ["Singing", "Saind", "saouth", , "Traning", "Hacking"];
+        var option = "";
+        arr.map((op,i)=>{
+         option+=`<option value="${op}" id="${i}" style="border-radius: 5px;"">${op}</option>`
+      });
+        document.getElementById("ArrayDropdown").innerHTML = option;
+    </script>
+
+</body>
+
+</html>
